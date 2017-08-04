@@ -67,6 +67,9 @@ public class GenerationMetaData {
     if (EntityBeanPropertyReader.dbJsonField(field)) {
       return propertyMap.getDbJsonType();
     }
+    if (EntityBeanPropertyReader.dbArrayField(field)) {
+      return propertyMap.getDbArrayType();
+    }
 
     EntityBeanPropertyReader anEnum = enumMap.get(fieldTypeClassName);
     if (anEnum != null) {

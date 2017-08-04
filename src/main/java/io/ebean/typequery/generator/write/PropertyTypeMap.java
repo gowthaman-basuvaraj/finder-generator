@@ -23,6 +23,7 @@ public class PropertyTypeMap {
    * Property type for Db Json properties.
    */
   private final PropertyType dbJsonType = new PropertyType("PJson");
+  private final PropertyType dbArrayType = new PropertyType("PArray");
 
   private Map<String,PropertyType> map = new HashMap<>();
 
@@ -116,5 +117,11 @@ public class PropertyTypeMap {
    */
   public PropertyType getDbJsonType() {
     return dbJsonType;
+  }
+  /**
+   * Return the Db Array property type (for DBArray).
+   */
+  public PropertyType getDbArrayType() {
+    return dbArrayType;
   }
 }

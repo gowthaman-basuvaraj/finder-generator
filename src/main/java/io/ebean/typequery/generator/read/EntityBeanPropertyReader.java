@@ -31,6 +31,8 @@ public class EntityBeanPropertyReader extends ClassNode {
 
   public static final String DBJSONB_ANNOTATION = "Lio/ebean/annotation/DbJsonB;";
 
+  public static final String DBARRAY_ANNOTATION = "Lio/ebean/annotation/DbArray;";
+
   public static final String DBJSON_ANNOTATION = "Lio/ebean/annotation/DbJson;";
 
   public static final String ID_ANNOTATION = "Ljavax/persistence/Id;";
@@ -125,6 +127,15 @@ public class EntityBeanPropertyReader extends ClassNode {
     // note transient modifier fields are already filtered out
     // along with static fields and ebean added fields
     return hasAnnotation(field, DBJSONB_ANNOTATION) || hasAnnotation(field, DBJSON_ANNOTATION);
+  }
+  /**
+   * Return true if it is a DbArray field.
+   */
+  public static boolean dbArrayField(FieldNode field) {
+
+    // note transient modifier fields are already filtered out
+    // along with static fields and ebean added fields
+    return hasAnnotation(field, DBARRAY_ANNOTATION);
   }
 
   /**
